@@ -14,7 +14,10 @@ public class BankDemoTest {
             System.out.print("The balance after withdraw is: $" + account.getBalance());
         } 
         catch(InsufficientFundsException e) {
-        System.out.print("Sorry, but your account is short by: $" + (e.getAmount() - account.getBalance()));
+        System.out.printf("Sorry, but your account is short by: $%.2f" + (e.getAmount() - account.getBalance()));
+        }
+        catch(IllegalArgumentException e) {
+        System.out.println(e.getMessage());
         }
     }
 }
